@@ -1,10 +1,15 @@
-# 首发与Qt君公众号
+# 首发于Qt君公众号
 QT += gui
 
 CONFIG += c++11 console
-CONFIG -= app_bundle
+CONFIG -= app_bundle debug_and_release
 
-DEFINES += QT_DEPRECATED_WARNINGS
+HEADERS += Object2Json.h
 
 SOURCES += \
         main.cpp
+
+msvc {
+    QMAKE_CFLAGS += /utf-8
+    QMAKE_CXXFLAGS += /utf-8
+}
